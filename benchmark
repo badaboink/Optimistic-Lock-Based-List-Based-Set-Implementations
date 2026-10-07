@@ -1,0 +1,14 @@
+#!/bin/bash
+
+thread_number_list=(1 4 6 8 10 12)
+update_ratio_list=(0 10 100)
+list_size_list=(100 1000 10000)
+
+for ls in "${list_size_list[@]}"; do
+  for tn in "${thread_number_list[@]}"; do
+    for ur in "${update_ratio_list[@]}"; do
+      range=$((ls * 2))
+      java -cp bin contention.benchmark.Test -b linkedlists.lockbased.HandOverHandListBasedSet -t "$tn" -u "$ur" -i "$ls" -r "$range" -d 2000 -W 0 
+    done
+  done
+done
