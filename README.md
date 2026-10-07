@@ -4,9 +4,12 @@
 
 ### Steps to run the benchmark bash file
 
-1. Move ``benchmark`` it to ``synchrobench/java``
+1. Move ``benchmark`` to ``synchrobench/java``
 
-2. Run it sending the output to a file: ``./benchmark | tee results.txt``
+2. Run it, output it in terminal and send the output to a file. 
+    
+    a. With errors: ``./benchmark  2>&1 | tee results.txt``
+    b. With no errors: ``./benchmark | tee results.txt``
 
 #### Steps to run handmade java class with synchrobench:
 
