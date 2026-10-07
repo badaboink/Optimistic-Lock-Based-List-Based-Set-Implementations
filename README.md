@@ -11,7 +11,7 @@
     a. With errors: ``./benchmark  2>&1 | tee results.txt``
     b. With no errors: ``./benchmark | tee results.txt``
 
-#### Steps to run handmade java class with synchrobench:
+### Steps to run handmade java class with synchrobench:
 
 1. Move java file to ``synchrobench/java/src/linkedlist/lockbased``
 
