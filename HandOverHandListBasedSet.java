@@ -1,29 +1,28 @@
-// package linkedlists.lockbased;
+package linkedlists.lockbased;
 
 import contention.abstractions.AbstractCompositionalIntSet;
-import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
-public class HandOverHandListBasedSet extends AbstractCompositionalIntSet{
+public class HandOverHandListBasedSet extends AbstractCompositionalIntSet {
     private Node head;
-    
+
     private static class Node {
-        Node(int item){value=item;next=null;}
         public int value;
         public Node next;
-        // private final Lock lock = new ReentrantLock();
+        private final Lock lock = new ReentrantLock();
 
-        // atomic single bit lock
-        private final AtomicBoolean lock = new AtomicBoolean(false);
-
-        public void lock(){
-            // lock.lock();
-            while (!lock.compareAndSet(false, true)) {
-            }
+        Node(int item) {
+            value = item;
+            next = null;
         }
-        
-        public void unlock(){
-            // lock.unlock();
-            lock.set(false);
+
+        public void lock() {
+            lock.lock();
+        }
+
+        public void unlock() {
+            lock.unlock();
         }
     }
 
