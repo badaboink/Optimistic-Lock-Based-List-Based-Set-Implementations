@@ -39,7 +39,7 @@ for path, fn in zip(file_paths, file_names):
 output_path = 'gnuplot_data'
 
 plots = {'10_update_ratio-varying_list_sizes' : ['10', None],
-        'varying_update_ratios-100_list_size' : [None, '100'], 
+        'varying_update_ratios-1000_list_size' : [None, '1000'], 
         '10_update_ratio-1000_list_size' : ['10', '1000']}
     
 for dir, (update_ratio, list_size) in plots.items():
